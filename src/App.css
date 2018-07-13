@@ -1,0 +1,19 @@
+body {
+
+}
+
+.App {
+  width: 80%;
+  margin:auto
+}
+.cards{
+  width:150px;
+  height:100px;
+  float: left;
+  border-style: outset;
+  border-color: coral;
+  border-width: 2px;
+  margin: 15px; 
+  text-align: center;
+  color: #ccc;
+}
