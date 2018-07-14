@@ -6,17 +6,22 @@ class DayCard extends Component  {
     constructor(props) {
         super(props);  
         console.log(props)
-            
     }
     NewDayCardItem =  this.props.report.map( (day,key) => {
-        return <DayCardItem key={key}  day={day.list} />
+        return <DayCardItem key={key}  day={day} />
      })  
-    render() {        
+    render() { 
+        if(!this.props.report) {
+            return <div>
+                Loding...
+            </div>
+        } else{
         return (
             <div>
                 {this.NewDayCardItem} 
             </div>
-        )
+            )
+        }
     }
 }
 
