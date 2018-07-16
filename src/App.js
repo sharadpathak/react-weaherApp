@@ -6,7 +6,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-     this.state  = { weatherReport: [{id:1,weather:"cloud",day:"Mon",temp:43}]
+     this.state  = { weatherReport: []
   }
 }
 _loadData() {
@@ -16,7 +16,7 @@ _loadData() {
       return response.json();
     })
     .then(weatherReport => {
-      this.setState({weatherReport});
+      this.setState({weatherReport: weatherReport.list});
     })
 }
 
@@ -26,7 +26,7 @@ componentDidMount () {
 
   render() {
     return (
-      <div className="App">       
+      <div className="App">  
           <DayCard report={this.state.weatherReport} />      
       </div>
     );

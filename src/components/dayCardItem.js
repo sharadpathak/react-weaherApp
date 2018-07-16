@@ -1,19 +1,17 @@
 import React, { Component} from 'react';
 
-
 class DayCardItem extends Component {
 
     constructor(props) {
         super(props);
-        console.log(props,"kkk")
     }
 
     render() {
         return(
                 <div className="cards">
-                    <p>{this.props.day.day}</p>
-                    <span>{this.props.day.weather}</span>
-                    <p>{this.props.day.temp}</p>
+                    <p>{this.props.day.weather[0].main}</p>
+                    <span><img src={this.props.day.weather[0].icon} alt={this.props.day.weather[0].icon} /></span>
+                    <p>{this.props.day.weather[0].description}</p>
                 </div>                 
         )
     }
